@@ -1,30 +1,46 @@
 /* Estilização do layout */
+
 body {
-    display: flex; /* Define o body como um container flexível. Todos os elementos diretos são organizados em um layout flex. */
-    justify-content: center; /* Centraliza os elementos horizontalmente no container pai (no caso, a página inteira). */
-    align-items: center; /* Centraliza os elementos verticalmente no container pai. */
-    height: 100vh; /* Define a altura da página como 100% da altura da janela de visualização (viewport). */
-    margin: 0; /* Remove as margens padrão do body. */
-    background-color: #b9b9b9; /* Define a cor de fundo da página como cinza claro (#b9b9b9). */
-    padding: 20px; /* Adiciona um espaçamento interno de 20px ao redor da página inteira. */
-    overflow: hidden; /* Isso desativa o scroll na página */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Ajuste para alinhar os elementos ao topo da página */
+    height: auto; /* Ajusta a altura conforme o conteúdo */
+    margin: 0;
+    background-color: #6d79c7;
+    padding: 50px;
+    overflow-x: hidden; /* Evita scroll horizontal */
 }
+
+
 
 #content {
     display: flex; /* Define o container #content como um container flexível, permitindo organizar seus elementos filhos. */
     flex-direction: row; /* Os elementos filhos serão organizados em uma linha (horizontalmente). */
     justify-content: space-between; /* Coloca as colunas nas extremidades opostas do container (esquerda e direita). */
-    gap: 100px; /* Adiciona um espaçamento de 100px entre as colunas do layout. */
+    gap: 30px; /* Adiciona um espaçamento de 100px entre as colunas do layout. */
     max-width: 1600px; /* Define a largura máxima do container como 1600px. */
     width: 100%; /* O container ocupará 100% da largura disponível até atingir a largura máxima. */
 }
 
 #leftColumn, #rightColumn {
-    width: 400px; /* Define a largura das colunas como 600px cada. */
+    width: 100%; /* Define a largura das colunas como 600px cada. */
     background-color: #ddd8d8; /* Define a cor de fundo das colunas como um cinza claro (#ddd8d8). */
     padding: 30px; /* Adiciona 20px de espaçamento interno (padding) ao conteúdo das colunas. */
     border-radius: 20px; /* Arredonda os cantos das colunas com um raio de 20px. */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve em torno das colunas. */
+    height: auto;
+    margin: 0 auto;
+    min-height: 750px; /* Garante que a altura mínima permita acomodar o conteúdo sem cortes */
+    overflow: visible; /* Garante que o conteúdo que ultrapasse o tamanho da coluna seja visível */
+}
+
+#titulo_coluna{
+    text-align: center;
+}
+
+#corpo_texto {
+    text-align: justify;
+    overflow-wrap: break-word; /* Permite que as palavras quebrem se necessário para evitar cortes */
 }
 
 #description h2, #gameInfo h2 {
@@ -46,10 +62,25 @@ body {
     padding-left: 20px; /* Adiciona um recuo de 20px no início das listas não ordenadas (<ul>). */
 }
 
+#container_titulo{
+    color: #f4f4f4;
+    background-color:#ffffff14;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 45%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#titulo_principal{
+    font-size: 35px;
+}
+
 #automato {
     display: flex; /* Define o container do autômato como flexível. */
     flex-direction: column; /* Organiza os elementos filhos do container verticalmente (coluna). */
     align-items: center; /* Centraliza os elementos filhos horizontalmente. */
+    margin-top: 4em; /*Adiciona uma margem acima do jogo da vida*/
     margin: 10 100px; /* Adiciona 100px de margem à esquerda e à direita do container do autômato. */
 }
 
@@ -79,3 +110,38 @@ button {
 button:hover {
     background-color: #45a049; /* Altera a cor de fundo do botão para um verde um pouco mais escuro (#45a049) quando o mouse está sobre ele. */
 }
+
+.prevGenButton {
+    font: inherit;
+    background-color: #f0f0f0;
+    border: 0;
+    color: #242424;
+    border-radius: 0.5em;
+    font-size: 1.35rem;
+    padding: 0.375em 1em;
+    font-weight: 600;
+    text-shadow: 0 0.0625em 0 #fff;
+    transition: 0.15s ease;
+    cursor: pointer;
+  }
+  button:active {
+    translate: 0 0.225em;
+  }
+
+  .nextGenButton {
+    font: inherit;
+    background-color: #f0f0f0;
+    border: 0;
+    color: #242424;
+    border-radius: 0.5em;
+    font-size: 1.35rem;
+    padding: 0.375em 1em;
+    font-weight: 600;
+    text-shadow: 0 0.0625em 0 #fff;
+    transition: 0.15s ease;
+    cursor: pointer;
+  }
+  button:active {
+    translate: 0 0.225em;
+  }
+  
